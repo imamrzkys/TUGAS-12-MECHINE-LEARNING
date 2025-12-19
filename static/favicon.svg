@@ -1,0 +1,33 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6B9D"/>
+      <stop offset="50%" stop-color="#FFA500"/>
+      <stop offset="100%" stop-color="#FF6B9D"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="28" fill="url(#gradient)" opacity="0.2"/>
+  
+  <!-- Shield shape -->
+  <path d="M32 8 L48 16 L48 32 C48 44 40 52 32 56 C24 52 16 44 16 32 L16 16 Z" 
+        fill="none" stroke="url(#gradient)" stroke-width="3" filter="url(#glow)"/>
+  
+  <!-- AI Brain/Detection symbol -->
+  <circle cx="32" cy="28" r="6" fill="url(#gradient)"/>
+  <path d="M26 34 L32 40 L38 34" stroke="url(#gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Scan lines effect -->
+  <line x1="20" y1="24" x2="28" y2="24" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="36" y1="24" x2="44" y2="24" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="20" y1="32" x2="26" y2="32" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="38" y1="32" x2="44" y2="32" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+</svg>

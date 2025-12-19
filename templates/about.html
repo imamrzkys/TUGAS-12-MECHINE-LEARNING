@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block title %}Tentang Proyek - Naive Bayes{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Tentang Proyek</h1>
+            <p class="page-subtitle">Memahami teknologi <strong>Machine Learning</strong> di balik deteksi berita palsu</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-card glass-card">
+                <div class="card-icon"></div>
+                <h2 class="card-title">Apa Itu Fake News?</h2>
+                <p class="card-text">
+                    Fake news atau berita palsu adalah informasi yang sengaja dibuat atau disebarkan dengan tujuan menyesatkan pembaca. 
+                    Berita palsu dapat berupa hoaks, propaganda, atau informasi yang dimanipulasi untuk kepentingan tertentu.
+                </p>
+                <p class="card-text">
+                    Di era digital, penyebaran berita palsu menjadi semakin masif dan cepat melalui media sosial dan platform online. 
+                    Hal ini dapat berdampak serius pada opini publik, keputusan politik, dan stabilitas sosial.
+                </p>
+            </div>
+            
+            <div class="about-card glass-card">
+                <div class="card-icon"></div>
+                <h2 class="card-title">Pentingnya Deteksi Fake News</h2>
+                <div class="importance-list">
+                    <div class="importance-item">
+                        <span class="item-number">01</span>
+                        <div class="item-content">
+                            <h3>Melindungi Masyarakat</h3>
+                            <p>Mencegah penyebaran informasi yang menyesatkan dan melindungi masyarakat dari manipulasi</p>
+                        </div>
+                    </div>
+                    <div class="importance-item">
+                        <span class="item-number">02</span>
+                        <div class="item-content">
+                            <h3>Menjaga Kredibilitas Media</h3>
+                            <p>Membantu memisahkan sumber berita terpercaya dari yang tidak dapat dipercaya</p>
+                        </div>
+                    </div>
+                    <div class="importance-item">
+                        <span class="item-number">03</span>
+                        <div class="item-content">
+                            <h3>Mendukung Literasi Digital</h3>
+                            <p>Meningkatkan kesadaran dan kemampuan masyarakat dalam menilai informasi online</p>
+                        </div>
+                    </div>
+                    <div class="importance-item">
+                        <span class="item-number">04</span>
+                        <div class="item-content">
+                            <h3>Efisiensi Verifikasi</h3>
+                            <p>Mempercepat proses verifikasi berita dengan bantuan teknologi otomatis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-card glass-card">
+                <div class="card-icon"></div>
+                <h2 class="card-title">Cara Kerja Naive Bayes</h2>
+                <p class="card-text">
+                    <strong>Naive Bayes</strong> adalah algoritma klasifikasi berbasis probabilitas yang menggunakan Teorema Bayes 
+                    dengan asumsi independensi antar fitur (naive assumption).
+                </p>
+                
+                <div class="algorithm-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Preprocessing Teks</h4>
+                            <p>Teks berita dibersihkan dari karakter khusus, diubah ke huruf kecil, dan tokenisasi</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>TF-IDF Vectorization</h4>
+                            <p>Mengubah teks menjadi representasi numerik dengan menghitung Term Frequency-Inverse Document Frequency</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Perhitungan Probabilitas</h4>
+                            <p>Menghitung probabilitas teks termasuk kategori Fake atau Real berdasarkan pola yang dipelajari</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Klasifikasi</h4>
+                            <p>Memilih kategori dengan probabilitas tertinggi sebagai hasil prediksi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Teorema Bayes</div>
+                    <div class="formula">
+                        P(Class|Text) = [P(Text|Class) × P(Class)] / P(Text)
+                    </div>
+                    <p class="formula-desc">
+                        Di mana P(Class|Text) adalah probabilitas teks termasuk dalam kelas tertentu (Fake/Real)
+                    </p>
+                </div>
+            </div>
+            
+            <div class="about-card glass-card">
+                <div class="card-icon"></div>
+                <h2 class="card-title">Dataset & Performa Model</h2>
+                <div class="dataset-info">
+                    <div class="info-row">
+                        <span class="info-label">Sumber Dataset:</span>
+                        <span class="info-value">Fake & Real News Dataset</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Total Data:</span>
+                        <span class="info-value">~40,000+ artikel berita</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Komposisi:</span>
+                        <span class="info-value">20,000+ Fake News & 20,000+ Real News</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Bahasa:</span>
+                        <span class="info-value">Bahasa Inggris</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Akurasi Model:</span>
+                        <span class="info-value highlight">~96%+</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Algoritma:</span>
+                        <span class="info-value">Multinomial Naive Bayes</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Vectorization:</span>
+                        <span class="info-value">TF-IDF (Term Frequency-Inverse Document Frequency)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-card glass-card">
+                <div class="card-icon">✨</div>
+                <h2 class="card-title">Kelebihan & Keterbatasan</h2>
+                
+                <div class="pros-cons-grid">
+                    <div class="pros-section">
+                        <h3 class="section-subtitle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#4ade80" stroke-width="2"/>
+                                <path d="M8 12L11 15L16 9" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Kelebihan
+                        </h3>
+                        <ul class="feature-list">
+                            <li>Akurasi tinggi (~96%) dalam klasifikasi</li>
+                            <li>Prediksi sangat cepat (real-time)</li>
+                            <li>Efisien untuk dataset besar</li>
+                            <li>Mudah diimplementasikan dan dipahami</li>
+                            <li>Tidak memerlukan komputasi yang berat</li>
+                            <li>Memberikan probabilitas untuk interpretasi</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cons-section">
+                        <h3 class="section-subtitle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#fbbf24" stroke-width="2"/>
+                                <path d="M12 8V12M12 16H12.01" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Keterbatasan
+                        </h3>
+                        <ul class="feature-list">
+                            <li>Asumsi independensi fitur (naive) tidak selalu realistis</li>
+                            <li>Performa bergantung pada kualitas data training</li>
+                            <li>Mungkin kurang akurat untuk berita dengan gaya penulisan unik</li>
+                            <li>Tidak dapat mendeteksi konteks visual atau multimedia</li>
+                            <li>Memerlukan update berkala untuk adaptasi pola baru</li>
+                            <li>Sensitif terhadap data yang tidak seimbang</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-card glass-card">
+                <div class="card-icon">🔬</div>
+                <h2 class="card-title">Teknologi yang Digunakan</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">🐍</div>
+                        <div class="tech-name">Python</div>
+                        <div class="tech-desc">Backend & ML</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🌶️</div>
+                        <div class="tech-name">Flask</div>
+                        <div class="tech-desc">Web Framework</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🤖</div>
+                        <div class="tech-name">Scikit-learn</div>
+                        <div class="tech-desc">Machine Learning</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🎨</div>
+                        <div class="tech-name">CSS3</div>
+                        <div class="tech-desc">Styling & Animation</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">⚡</div>
+                        <div class="tech-name">JavaScript</div>
+                        <div class="tech-desc">Interactivity</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🚀</div>
+                        <div class="tech-name">Railway</div>
+                        <div class="tech-desc">Deployment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

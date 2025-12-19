@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}Beranda - Naive Bayes{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>Powered by Machine Learning</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Deteksi Berita Palsu dengan
+                <span class="gradient-text">Kecerdasan Buatan</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Sistem deteksi berita palsu berbasis <strong>Naive Bayes</strong> dengan akurasi tinggi. 
+                Analisis probabilitas real-time untuk membantu Anda membedakan fakta dari hoaks.
+            </p>
+            
+            <div class="hero-cta">
+                <a href="{{ url_for('predict') }}" class="btn btn-primary btn-glow">
+                    <span>Mulai Prediksi</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="{{ url_for('visualizations') }}" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M7 10L10 13L13 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Lihat Visualisasi</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Fitur Unggulan</h2>
+            <p class="section-subtitle">Teknologi canggih untuk deteksi berita palsu yang akurat dan cepat</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="20" stroke="url(#grad1)" stroke-width="2"/>
+                        <path d="M16 24L22 30L32 18" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#FF6B9D"/>
+                                <stop offset="100%" stop-color="#FFA500"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="feature-title">AKURASI TINGGI</h3>
+                <p class="feature-description">
+                    Model Naive Bayes terlatih dengan dataset lebih dari 40.000 berita, 
+                    menghasilkan akurasi prediksi di atas 96%.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="url(#grad2)" stroke-width="2"/>
+                        <circle cx="24" cy="20" r="4" fill="url(#grad2)"/>
+                        <path d="M16 32C16 28 19 26 24 26C29 26 32 28 32 32" stroke="url(#grad2)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="grad2" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#FF6B9D"/>
+                                <stop offset="100%" stop-color="#FFA500"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="feature-title">MACHINE LEARNING</h3>
+                <p class="feature-description">
+                    Menggunakan algoritma Naive Bayes dengan TF-IDF vectorization 
+                    untuk analisis teks yang mendalam dan akurat.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M8 32L16 20L24 28L32 16L40 24" stroke="url(#grad3)" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="20" r="3" fill="url(#grad3)"/>
+                        <circle cx="24" cy="28" r="3" fill="url(#grad3)"/>
+                        <circle cx="32" cy="16" r="3" fill="url(#grad3)"/>
+                        <defs>
+                            <linearGradient id="grad3" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#FF6B9D"/>
+                                <stop offset="100%" stop-color="#FFA500"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="feature-title">ANALISIS PROBABILITAS</h3>
+                <p class="feature-description">
+                    Menampilkan tingkat kepercayaan prediksi dengan probabilitas 
+                    untuk berita asli dan palsu secara transparan.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 8L28 16H20L24 8Z" fill="url(#grad4)"/>
+                        <circle cx="24" cy="28" r="8" stroke="url(#grad4)" stroke-width="2"/>
+                        <path d="M24 24V28M24 32H24.02" stroke="url(#grad4)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="grad4" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#FF6B9D"/>
+                                <stop offset="100%" stop-color="#FFA500"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="feature-title">DETEKSI REAL-TIME</h3>
+                <p class="feature-description">
+                    Prediksi instan dalam hitungan detik. Masukkan teks berita 
+                    dan dapatkan hasil analisis secara langsung.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="12" y="8" width="24" height="32" rx="2" stroke="url(#grad5)" stroke-width="2"/>
+                        <path d="M20 16H28M20 24H28M20 32H24" stroke="url(#grad5)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="grad5" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#FF6B9D"/>
+                                <stop offset="100%" stop-color="#FFA500"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="feature-title">INTERFACE MODERN</h3>
+                <p class="feature-description">
+                    Desain futuristik dengan glassmorphism dan animasi smooth. 
+                    Responsif sempurna di semua perangkat.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="12" width="32" height="24" rx="2" stroke="url(#grad6)" stroke-width="2"/>
+                        <path d="M16 20L20 24L28 16" stroke="url(#grad6)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="grad6" x1="0" y1="0" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#FF6B9D"/>
+                                <stop offset="100%" stop-color="#FFA500"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="feature-title">VISUALISASI DATA</h3>
+                <p class="feature-description">
+                    Lihat berbagai visualisasi dan analisis data untuk memahami 
+                    performa model dan distribusi dataset.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Model Naive Bayes</h2>
+            <p class="section-subtitle">Performa dan kecepatan model machine learning kami</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-value">96%+</div>
+                <div class="stat-label">Akurasi Model</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📰</div>
+                <div class="stat-value">40K+</div>
+                <div class="stat-label">Data Training</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-value">&lt;1s</div>
+                <div class="stat-label">Waktu Prediksi</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-value">Real-Time</div>
+                <div class="stat-label">Analisis Cepat</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <h2 class="cta-title">Siap Mencoba?</h2>
+            <p class="cta-text">
+                Mulai deteksi berita palsu sekarang juga dengan teknologi Machine Learning terdepan
+            </p>
+            <a href="{{ url_for('predict') }}" class="btn btn-primary btn-large btn-glow">
+                Coba Sekarang
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
